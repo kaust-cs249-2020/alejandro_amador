@@ -103,12 +103,12 @@ template <typename T>
 vector<vector<T>> readMatrix(string name, int rows, int columns, T example)
 {
 	ifstream file(name);
-	vector<vector<T>> result(columns, vector<T>(4));
+	vector<vector<T>> result(rows, vector<T>(columns));
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < columns; j++)
 		{
-			file >> result[j][i];
+			file >> result[i][j];
 		}
 	}
 	file.close();
